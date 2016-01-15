@@ -1,25 +1,40 @@
-build
-docs
-vendor
-tests/logs
+# Env
+/.env
+/vhost.conf
 
-# cache directories
-Thumbs.db
-*.DS_Store
-*.empty
+# composer
+/vendor
+composer.phar
 
-#phpstorm project files
+# IDE
 .idea
-
-#netbeans project files
 nbproject
-
-#eclipse, zend studio, aptana or other eclipse like project files
 .buildpath
 .project
 .settings
 
+# windows thumbnail cache
+Thumbs.db
 
-# mac deployment helpers
-switch
-index
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit
+phpunit.phar
+/phpunit.xml
+
+# Vagrant
+/.vagrant
+/vagrant.yaml
+
+
+
+# Sublime Text files
+sftp-config.json
+.remote-sync.json
+*.sublime-project
+*.sublime-workspace
+web/project
+web/.htaccess
+
+node/node_modules

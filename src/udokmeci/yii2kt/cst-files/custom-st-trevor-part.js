@@ -1,8 +1,7 @@
 jQuery.fn.customSirTrevorPart = function(options) {
     var defaults = {
         imgBtnLabel: '<i class="fa fa-picture-o"></i>',
-        maxWidth:1200,
-
+        maxWidth: 1200,
     };
     var settings = $.extend(true, {}, defaults, options);
     var map = {};
@@ -20,11 +19,11 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 var el = document.createElement("div");
                 el.innerHTML = html;
                 var frag = document.createDocumentFragment(), node, lastNode;
-                while ( (node = el.firstChild) ) {
+                while ((node = el.firstChild)) {
                     lastNode = frag.appendChild(node);
                 }
                 range.insertNode(frag);
-                
+
                 // Preserve the selection
                 if (lastNode) {
                     range = range.cloneRange();
@@ -39,7 +38,10 @@ jQuery.fn.customSirTrevorPart = function(options) {
             document.selection.createRange().pasteHTML(html);
         }
     }
-    function getInstance(){return SirTrevor.getInstance(settings.block.instanceID)};
+    function getInstance() {
+        return SirTrevor.getInstance(settings.block.instanceID)
+    }
+    ;
     function initBlock(item) {
         item.addClass('cst-placeholer');
         item.notDefault = function() {
@@ -69,12 +71,13 @@ jQuery.fn.customSirTrevorPart = function(options) {
 
         //console.log(item.data().role);
         switch (item.data().role) {
-            case 'editable-subblock':
-                return initSubBlock(item);
-            case 'editable-image':
-                return initImageBlock(item);
+        case 'editable-subblock':
+            return initSubBlock(item);
+        case 'editable-image':
+            return initImageBlock(item);
         }
-    };
+    }
+    ;
 
     function initSubBlock(item) {
 
@@ -89,35 +92,34 @@ jQuery.fn.customSirTrevorPart = function(options) {
             if (item.hasClass('cst-placeholer'))
                 document.execCommand('selectAll', false, null);
         });
-        item.changeFunction=function(e) {
-            console.log('input',e);
+        item.changeFunction = function(e) {
+            console.log('input', e);
             item.notDefault();
             //console.log(item.data().key,settings.block);
             settings.block.change(item.data().key, item.getValue());
         };
-        item.isHeading=function(){
+        item.isHeading = function() {
             return item.is('h1,h2,h3,h4,h5,h6')
         };
-        if(!item.isHeading()){
-            item.boldBtn= item.changeImageBtn = $('<span class="btn btn-default" />')
-                    .html('<i class="fa fa-bold"></i>')
-                    .appendTo(item.options.btnGroup)
-                    .click(function(){
-                        document.execCommand('bold');
-                    });
-            item.italicBtn= item.changeImageBtn = $('<span class="btn btn-default" />')
-                    .html('<i class="fa fa-italic"></i>')
-                    .appendTo(item.options.btnGroup)
-                    .click(function(){
-                        document.execCommand('italic');
-                    });
+        if (!item.isHeading()) {
+            item.boldBtn = item.changeImageBtn = $('<span class="btn btn-default" />')
+                .html('<i class="fa fa-bold"></i>')
+                .appendTo(item.options.btnGroup)
+                .click(function() {
+                    document.execCommand('bold');
+                });
+            item.italicBtn = item.changeImageBtn = $('<span class="btn btn-default" />')
+                .html('<i class="fa fa-italic"></i>')
+                .appendTo(item.options.btnGroup)
+                .click(function() {
+                    document.execCommand('italic');
+                });
         }
         item[0].addEventListener("paste", function(e) {
             e.preventDefault();
             var clipboardData = (e.originalEvent || e).clipboardData;
             var text = clipboardData.getData('text/html') || clipboardData.getData('Text') || false;
-            console.log(text);
-            if(!text)
+            if (!text)
                 return;
             var $result = $('<div></div>').append($(text));
 
@@ -127,94 +129,54 @@ jQuery.fn.customSirTrevorPart = function(options) {
             $.each($result.find("*"), function(idx, val) {
 
                 var $item = $(val);
-                if ($item.length > 0){
-                   var saveStyle = {
+                if ($item.length > 0) {
+                    var saveStyle = {
                         'font-weight': $item.css('font-weight'),
                         'font-style': $item.css('font-style')
                     };
                     $item.removeAttr('style')
-                         .removeClass()
-                         .css(saveStyle); 
-                    if(item.isHeading() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')){
-                        $item.replaceWith(function(){
+                        .removeClass()
+                        .css(saveStyle);
+                    if (item.isHeading() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')) {
+                        $item.replaceWith(function() {
                             return $(this).text();
                         });
-                    } 
-                    if($(this).is('iframe')){
-                        var wrappervideo=$('<div class="embed-responsive embed-responsive-16by9" />');
+                    }
+                    if ($(this).is('iframe')) {
+                        var wrappervideo = $('<div class="embed-responsive embed-responsive-16by9" />');
                         wrappervideo.appendTo($item.addClass('embed-responsive-item').parent()).append($item).append('<br/>');
                     }
                 }
             });
-
-            
-
             // remove unnecesary tags (if paste from word)
             $result.children('style').remove();
             $result.children('meta').remove();
             $result.children('link').remove();
             pasteHtmlAtCaret($result.html());
             item.changeFunction(e);
-
-
-            /*
-            console.log('paste',e);
-            e.preventDefault();
-            var text = (e.originalEvent || e).clipboardData.getData('text/html') || prompt('Paste something..');
-            var $text = $(text);
-            var $wrapper = $('<div/>').append($text);
-            
-            
-            console.log($text);
-            // replace all styles except bold and italic
-            $.each($wrapper.find("*"), function(idx, val) {
-                var $item = $(val);
-                console.log($item);
-                if ($item.length > 0){
-                    $item.removeAttr('style').removeClass(); 
-
-                    $item.replaceWith(function(){
-                        if($(this).is('span')){
-                            var res = $("<span />", {html: $(this).html()});
-                        }
-                        var res = $(this).text();
-                        console.log(res);
-                        return res;
-                    });
-                }
-            });
-            
-            // remove unnecesary tags (if paste from word)
-            $wrapper.children('style').remove();
-            $wrapper.children('meta').remove()
-            $wrapper.children('link').remove();
-            $(this).html($wrapper.html());
-
-            */
         }, false);
-        item[0].addEventListener("input", item.changeFunction , false);
+        item[0].addEventListener("input", item.changeFunction, false);
 
-  
+
         return item;
-    };
+    }
+    ;
 
     function initImageBlock(item) {
 
         item.getValue = function() {
             return {
-                url:item.attr('src'),
-                id:item.data().id,
+                url: item.attr('src'),
+                id: item.data().id,
             };
         };
+
         item.setValue = function(value) {
             return item
                 .attr('src', value.url)
                 .data('id', value.id)
                 .notDefault();
         };
-        console.log(item);
-
-
 
         item.editing = function() {
             item.options.btnGroup.empty();
@@ -222,19 +184,17 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 .html(settings.imgBtnLabel)
                 .appendTo(item.options.btnGroup);
             var input = item.input = $('<input type="file"/>').appendTo(item.changeImageBtn);
-            
-
             input.on('change', function(e) {
                 var input = this;
                 if (input.files && input.files[0]) {
-                    var latestValue=item.getValue();
+                    var latestValue = item.getValue();
                     var reader = new FileReader();
                     var target_type = input.files[0].type;
                     var filename = input.files[0].name;
                     var cropper;
                     reader.onload = function(e) {
-                        item.setValue($.extend(item.getValue(),{
-                            url:e.target.result
+                        item.setValue($.extend(item.getValue(), {
+                            url: e.target.result
                         }));
                         console.log(item.getValue());
                         item.changeImageBtn.hide();
@@ -250,107 +210,91 @@ jQuery.fn.customSirTrevorPart = function(options) {
                         cropper = item.cropper({
                             dragMode: 'move',
                             viewMode: 1,
-                            autoCrop:true,
+                            autoCrop: true,
                         });
-                        var uploadFunction = function(e,cancel) {
-                            cancel=cancel||false;
-
-                            if(cancel){
-                                var imageData=cropper.cropper('getImageData');
-                                cropper.cropper('setCropBoxData',{
-                                    top:0,
-                                    left:0,
-                                    width:imageData.width,
-                                    height:imageData.height,
+                        var uploadFunction = function(e, cancel) {
+                            cancel = cancel || false;
+                            if (cancel) {
+                                var imageData = cropper.cropper('getImageData');
+                                cropper.cropper('setCropBoxData', {
+                                    top: 0,
+                                    left: 0,
+                                    width: imageData.width,
+                                    height: imageData.height,
                                 });
                             }
                             var canvas = cropper.cropper('getCroppedCanvas');
-
-                            var allowedMaxWidth=item.data().maxWidth || settings.maxWidth ;
-                            
-                            if(canvas.width>allowedMaxWidth){
-                                var ratio=allowedMaxWidth/canvas.width;
-                                var canvas = cropper.cropper('getCroppedCanvas',{
-                                    width:canvas.width*ratio,
-                                    height:canvas.height*ratio,
+                            var allowedMaxWidth = item.data().maxWidth || settings.maxWidth;
+                            if (canvas.width > allowedMaxWidth) {
+                                var ratio = allowedMaxWidth / canvas.width;
+                                var canvas = cropper.cropper('getCroppedCanvas', {
+                                    width: canvas.width * ratio,
+                                    height: canvas.height * ratio,
                                 });
                             }
-
-                            window.ca=canvas;
                             var canvasData = canvas.toDataURL(target_type);
-
-                            item.setValue($.extend(item.getValue(),{
-                                url:canvasData
+                            item.setValue($.extend(item.getValue(), {
+                                url: canvasData
                             }));
-
                             var nanobar = new Nanobar({
                                 target: item.wrapper[0]
                             });
                             nanobar.go(10);
                             var formData = new FormData();
-                            //console.log(settings.block);
                             var blobBin = atob(canvasData.split(',')[1]);
                             var array = [];
-                            for(var i = 0; i < blobBin.length; i++) {
+                            for (var i = 0; i < blobBin.length; i++) {
                                 array.push(blobBin.charCodeAt(i));
                             }
-
-                            var file=new Blob([new Uint8Array(array)], {type: target_type});
-                            
-                            formData.append('attachment[file]', file,filename);
-                            if(item.getValue().id){
+                            var file = new Blob([new Uint8Array(array)], {
+                                type: target_type
+                            });
+                            formData.append('attachment[file]', file, filename);
+                            if (item.getValue().id) {
                                 formData.append('attachment_file_override_id', item.getValue().id);
                             }
-                            
                             $.ajax({
                                 xhr: function() {
                                     var xhr = new window.XMLHttpRequest();
                                     xhr.upload.addEventListener("progress", function(evt) {
                                         if (evt.lengthComputable) {
                                             var percentComplete = evt.loaded / evt.total;
-                                            nanobar.go(percentComplete*90);
+                                            nanobar.go(percentComplete * 80+10);
                                         }
                                     }, false);
-
                                     xhr.addEventListener("progress", function(evt) {
                                         if (evt.lengthComputable) {
                                             var percentComplete = evt.loaded / evt.total;
-                                            nanobar.go(percentComplete*10+90);
+                                            nanobar.go(percentComplete * 10 + 90);
                                         }
                                     }, false);
-
                                     return xhr;
                                 },
                                 type: 'POST',
                                 url: getInstance().options.uploadUrl,
-
                                 data: formData,
                                 contentType: false,
-                                    processData: false,
+                                processData: false,
                                 success: function(data) {
-                                    
                                     item.setValue({
-                                        url:data.file.url,
-                                        id:data.file.media_id
+                                        url: data.file.url,
+                                        id: data.file.media_id
                                     })
                                     settings.block.change(item.data().key, item.getValue());
                                     console.log(item);
-
-                                    //nanobar.go(100);
                                 },
                                 error: function() {
-                                    //nanobar.go(100);
                                     console.log('Upload error');
-                                }
+                                },
+                            }).always(function(){
+                                $(nanobar.el).remove();
                             });
-
-                           
                             cropper.cropper('destroy');
                             item.editing();
                         }
                         item.imageOkBtn.click(uploadFunction);
                         item.imageNoCropBtn.click(function(e) {
-                            uploadFunction(e,true);
+                            uploadFunction(e, true);
                         });
                         item.imageCancelBtn.click(function(e) {
                             item.setValue(latestValue);
@@ -363,7 +307,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
             });
         }
         item.editing();
-
         return item;
     };
 
@@ -372,10 +315,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
         map[$this.data().key] = initBlock($this);
 
     });
-
-
-
-
 
     this.setValue = function(key, value) {
         map[key].setValue(value).notDefault();
@@ -387,5 +326,4 @@ jQuery.fn.customSirTrevorPart = function(options) {
     }
 
     return this;
-
 };
