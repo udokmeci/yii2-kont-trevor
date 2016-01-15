@@ -21,8 +21,6 @@ class CustomSirTrevorAsset extends AssetBundle
         'yii\web\JqueryAsset',
         'xfg\mustachejs\MustachejsAsset',
         'apollo\yii2\i18next\assets\Asset',
-        'backend\assets\BackendAsset',
-        'backend\assets\CustomSirTrevorAsset',
         'yii\imperavi\ImperaviRedactorAsset',
         'madand\underscore\UnderscoreAsset'
     ];
