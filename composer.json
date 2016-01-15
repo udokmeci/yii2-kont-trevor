@@ -1,0 +1,43 @@
+{
+    "name": "udokmeci/yii2-kont-trevor",
+    "type": "library",
+    "description": "Yii2 Sir Trevor + Mustache Custom Block Generator",
+    "keywords": ["sir trevor","content builder","yii2"],
+    "homepage": "https://github.com/udokmeci/yii2-kont-trevor",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Uğur DÖKMECİ",
+            "email": "ugurdokmeci@gmail.com",
+            "homepage": "https://github.com/udokmeci/yii2-kont-trevor",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "ugurdokmeci@gmail.com",
+        "source": "https://github.com/udokmeci/yii2-kont-trevor"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "yiisoft/yii2": "*",
+        "perminder-klair/yii2-sir-trevor-js": "dev-master",
+        "apollo/yii2-i18next" : "*",
+        "bower-asset/sir-trevor-js": "*",
+        "xfg/yii2-mustache.js":"*",
+        "cedx/yii2-mustache":"*",
+        "madand/yii2-underscore": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-0" : {
+            "udokmeci\\yii2kt" : "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.2-dev"
+        }
+    }
+}

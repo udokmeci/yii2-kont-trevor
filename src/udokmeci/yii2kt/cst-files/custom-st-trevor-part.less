@@ -1,0 +1,38 @@
+.st-block{
+	img.cst-placeholer{
+	    opacity: 0.4;
+	    filter: alpha(opacity=40); /* msie */
+	    background-color: #000;
+	}
+	.cst-placeholer{
+		color:#ccc;
+	}
+	.st-error{
+		background-color: #FFF4F4;
+	}
+	.cst-wrapper{
+		.cst-options{
+			display:none;
+		    position: relative;
+		    width: 100%;
+		    height: 0px;
+		    text-align: left;
+		    z-index:99;
+
+
+
+			> .btn-group{
+				position: absolute;
+			    width: 200px;
+			    top:-30px;
+
+			}
+		}
+	}
+}
+
+.cst-wrapper:hover {
+	.cst-options {
+	    display:block !important;
+	}
+}
