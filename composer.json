@@ -25,7 +25,8 @@
         "bower-asset/sir-trevor-js": "*",
         "xfg/yii2-mustache.js":"*",
         "cedx/yii2-mustache":"*",
-        "madand/yii2-underscore": "*"
+        "madand/yii2-underscore": "*",
+        "asofter/yii2-imperavi-redactor": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
