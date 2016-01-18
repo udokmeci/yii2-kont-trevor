@@ -1,11 +1,35 @@
+
 var SirTrevorCustomBlockAttributes = {
     customSirTrevorPart: null,
     icon_name: function() {
-        return '<img src="' + this.image + '" alt="' + this.title + '">';
+        if (!this.image) {
+            var img_id = this.type + '-thumb';
+            var container = $('<div class="container">').appendTo(document.body);
+            var rows = $('<div class="row">').appendTo(container);
+            var col = $('<div class="col-sm-6">').appendTo(rows).append(this.editorHTML());
+            setTimeout(function() {
+                html2canvas(col[0], {
+                    useCORS:true,
+                    useTainted:true,
+
+                    onrendered: function(canvas) {
+                        setTimeout(function() {
+                            $('#' + img_id).attr('src', canvas.toDataURL());
+                            setTimeout(function() {
+                                container.remove();
+                            }, 2000);
+                        }, 2000)
+                    }
+                });
+            }, 2000);
+
+        }
+        return '<img  id="' + img_id + '" src="' + this.image + '" alt="' + this.title + '"/>';
     },
 
     editorHTML: function() {
         var html = Mustache.render(this.template, this.templateObject);
+
         //console.log(html);
         return html;
     },

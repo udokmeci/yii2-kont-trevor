@@ -168,12 +168,16 @@ jQuery.fn.customSirTrevorPart = function(options) {
             return {
                 url: item.attr('src'),
                 id: item.data().id,
+                width: item.data().width,
+                height: item.data().height,
             };
         };
 
         item.setValue = function(value) {
             return item
                 .attr('src', value.url)
+                .data('width', value.width)
+                .data('height', value.height)
                 .data('id', value.id)
                 .notDefault();
         };
@@ -234,6 +238,8 @@ jQuery.fn.customSirTrevorPart = function(options) {
                             }
                             var canvasData = canvas.toDataURL(target_type);
                             item.setValue($.extend(item.getValue(), {
+                                width:canvas.width,
+                                height:canvas.height,
                                 url: canvasData
                             }));
                             var nanobar = new Nanobar({
