@@ -1,6 +1,8 @@
 # yii2-kont-trevor
 yii2 optimized content builder upon Sir Trevor wysiwyg custom components with Mustache, jQuery Cropper and others. 
 
+![Yii2 Kont Trevor in action](https://raw.github.com/udokmeci/yii2-kont-trevor/master/kont-trevor.gif)
+
 Installation
 ------------
 
