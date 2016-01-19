@@ -26,7 +26,8 @@
         "xfg/yii2-mustache.js":"*",
         "cedx/yii2-mustache":"*",
         "madand/yii2-underscore": "*",
-        "asofter/yii2-imperavi-redactor": "*"
+        "asofter/yii2-imperavi-redactor": "*",
+        "bower-asset/font-awesome": "^4.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
