@@ -73,15 +73,9 @@ jQuery.fn.customSirTrevorPart = function(options) {
         item.isHeading = function() {
             return item.is('h1,h2,h3,h4,h5,h6')
         };
-        if (!item.isHeading()) {
-            var editor = new MediumEditor(item, {
-                // options go here
-            });
-        }else {
-            var editor = new MediumEditor(item, {
-                buttons: ['bold', 'italic', 'underline', 'anchor'],
-            });
-        }
+
+       
+
         item[0].addEventListener("paste", function(e) {
             e.preventDefault();
             var clipboardData = (e.originalEvent || e).clipboardData;
@@ -120,6 +114,9 @@ jQuery.fn.customSirTrevorPart = function(options) {
             item.changeFunction(e);
         }, false);
         item[0].addEventListener("input", item.changeFunction, false);
+        item.editor = new MediumEditor(item, {
+            buttons: ['bold', 'italic', 'underline', 'anchor'],
+        });
         return item;
     };
     function initImageBlock(item) {
