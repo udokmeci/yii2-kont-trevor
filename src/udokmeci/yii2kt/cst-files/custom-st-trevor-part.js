@@ -36,6 +36,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
         return SirTrevor.getInstance(settings.block.instanceID)
     };
     function initBlock(item) {
+        console.log(item);
         item.addClass('cst-placeholer');
         item.notDefault = function() {
             item.removeClass('cst-placeholer');
@@ -54,8 +55,13 @@ jQuery.fn.customSirTrevorPart = function(options) {
     };
     function initSubBlock(item) {
         item.attr('contenteditable', 'true');
+        item.isBlock = function() {
+            return item.css('display')=='block';
+        };
         item.getValue = function() {
-            return item.html();
+            if(item.isBlock())
+                return item.html();
+            return $(item.html()).html();
         };
         item.setValue = function(value) {
             return item.html(value).notDefault();
@@ -70,12 +76,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
             //console.log(item.data().key,settings.block);
             settings.block.change(item.data().key, item.getValue());
         };
-        item.isHeading = function() {
-            return item.is('h1,h2,h3,h4,h5,h6')
-        };
-
-       
-
+        
         item[0].addEventListener("paste", function(e) {
             e.preventDefault();
             var clipboardData = (e.originalEvent || e).clipboardData;
@@ -95,7 +96,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
                     $item.removeAttr('style')
                         .removeClass()
                         .css(saveStyle);
-                    if (item.isHeading() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')) {
+                    if (item.isBlock() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')) {
                         $item.replaceWith(function() {
                             return $(this).text();
                         });
@@ -116,6 +117,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
         item[0].addEventListener("input", item.changeFunction, false);
         item.editor = new MediumEditor(item, {
             buttons: ['bold', 'italic', 'underline', 'anchor'],
+            textOnly:true,
         });
         return item;
     };
