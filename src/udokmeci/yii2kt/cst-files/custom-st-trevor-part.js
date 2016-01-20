@@ -74,18 +74,13 @@ jQuery.fn.customSirTrevorPart = function(options) {
             return item.is('h1,h2,h3,h4,h5,h6')
         };
         if (!item.isHeading()) {
-            item.boldBtn = item.changeImageBtn = $('<span class="btn btn-default" />')
-                .html('<i class="fa fa-bold"></i>')
-                .appendTo(item.options.btnGroup)
-                .click(function() {
-                    document.execCommand('bold');
-                });
-            item.italicBtn = item.changeImageBtn = $('<span class="btn btn-default" />')
-                .html('<i class="fa fa-italic"></i>')
-                .appendTo(item.options.btnGroup)
-                .click(function() {
-                    document.execCommand('italic');
-                });
+            var editor = new MediumEditor(item, {
+                // options go here
+            });
+        }else {
+            var editor = new MediumEditor(item, {
+                buttons: ['bold', 'italic', 'underline', 'anchor'],
+            });
         }
         item[0].addEventListener("paste", function(e) {
             e.preventDefault();
