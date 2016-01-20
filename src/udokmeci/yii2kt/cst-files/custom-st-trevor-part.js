@@ -13,9 +13,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
             if (sel.getRangeAt && sel.rangeCount) {
                 range = sel.getRangeAt(0);
                 range.deleteContents();
-
-                // Range.createContextualFragment() would be useful here but is
-                // non-standard and not supported in all browsers (IE9, for one)
                 var el = document.createElement("div");
                 el.innerHTML = html;
                 var frag = document.createDocumentFragment(), node, lastNode;
@@ -23,8 +20,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
                     lastNode = frag.appendChild(node);
                 }
                 range.insertNode(frag);
-
-                // Preserve the selection
                 if (lastNode) {
                     range = range.cloneRange();
                     range.setStartAfter(lastNode);
@@ -34,53 +29,30 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 }
             }
         } else if (document.selection && document.selection.type != "Control") {
-            // IE < 9
             document.selection.createRange().pasteHTML(html);
         }
-    }
+    };
     function getInstance() {
         return SirTrevor.getInstance(settings.block.instanceID)
-    }
-    ;
+    };
     function initBlock(item) {
         item.addClass('cst-placeholer');
         item.notDefault = function() {
             item.removeClass('cst-placeholer');
             return item;
         }
-
-
-
         item.wrapper = $('<div class="cst-wrapper"/>').appendTo(item.parent());
         item.options = $('<div class="cst-options"/>').appendTo(item.wrapper);
         item.options.btnGroup = $('<div class="btn-group" role="group" aria-label="..."/>').appendTo(item.options);
-
-        /* item.options.btnGroup.append($(
-             ['<button type="button" class="btn btn-default">1</button>',
-             '<button type="button" class="btn btn-default">2</button>',
-             '<div class="btn-group" role="group">',
-                 '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">       Dropdown       <span class="caret"></span></button>',
-                 '<ul class="dropdown-menu">',
-                     '<li><a href="#">Dropdown link</a></li>',
-                     '<li><a href="#">Dropdown link</a></li>',
-                 '</ul>',
-             '</div>'].join('\n')
-             ));*/
-
         item.appendTo(item.wrapper);
-
-        //console.log(item.data().role);
         switch (item.data().role) {
         case 'editable-subblock':
             return initSubBlock(item);
         case 'editable-image':
             return initImageBlock(item);
         }
-    }
-    ;
-
+    };
     function initSubBlock(item) {
-
         item.attr('contenteditable', 'true');
         item.getValue = function() {
             return item.html();
@@ -122,13 +94,10 @@ jQuery.fn.customSirTrevorPart = function(options) {
             if (!text)
                 return;
             var $result = $('<div></div>').append($(text));
-
-            $result.html($result.html());
-
-            // replace all styles except bold and italic
+                $result.html($result.html());
+                // replace all styles except bold and italic
             $.each($result.find("*"), function(idx, val) {
-
-                var $item = $(val);
+                        var $item = $(val);
                 if ($item.length > 0) {
                     var saveStyle = {
                         'font-weight': $item.css('font-weight'),
@@ -156,14 +125,9 @@ jQuery.fn.customSirTrevorPart = function(options) {
             item.changeFunction(e);
         }, false);
         item[0].addEventListener("input", item.changeFunction, false);
-
-
         return item;
-    }
-    ;
-
+    };
     function initImageBlock(item) {
-
         item.getValue = function() {
             return {
                 url: item.attr('src'),
@@ -172,7 +136,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 height: item.data().height,
             };
         };
-
         item.setValue = function(value) {
             return item
                 .attr('src', value.url)
@@ -181,7 +144,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 .data('id', value.id)
                 .notDefault();
         };
-
         item.editing = function() {
             item.options.btnGroup.empty();
             item.changeImageBtn = $('<span class="btn btn-primary btn-file" />')
@@ -238,8 +200,8 @@ jQuery.fn.customSirTrevorPart = function(options) {
                             }
                             var canvasData = canvas.toDataURL(target_type);
                             item.setValue($.extend(item.getValue(), {
-                                width:canvas.width,
-                                height:canvas.height,
+                                width: canvas.width,
+                                height: canvas.height,
                                 url: canvasData
                             }));
                             var nanobar = new Nanobar({
@@ -265,7 +227,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
                                     xhr.upload.addEventListener("progress", function(evt) {
                                         if (evt.lengthComputable) {
                                             var percentComplete = evt.loaded / evt.total;
-                                            nanobar.go(percentComplete * 80+10);
+                                            nanobar.go(percentComplete * 80 + 10);
                                         }
                                     }, false);
                                     xhr.addEventListener("progress", function(evt) {
@@ -292,7 +254,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
                                 error: function() {
                                     console.log('Upload error');
                                 },
-                            }).always(function(){
+                            }).always(function() {
                                 $(nanobar.el).remove();
                             });
                             cropper.cropper('destroy');
@@ -315,21 +277,16 @@ jQuery.fn.customSirTrevorPart = function(options) {
         item.editing();
         return item;
     };
-
     this.each(function() {
         var $this = $(this);
         map[$this.data().key] = initBlock($this);
-
     });
-
     this.setValue = function(key, value) {
         map[key].setValue(value).notDefault();
     }
-
     this.getValue = function(key) {
         //console.log(map[key]);
         map[key].getValue();
     }
-
     return this;
 };

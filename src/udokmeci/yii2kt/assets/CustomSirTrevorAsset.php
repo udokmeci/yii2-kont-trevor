@@ -14,8 +14,6 @@ class CustomSirTrevorAsset extends AssetBundle
     public $js = [
         '//cdnjs.cloudflare.com/ajax/libs/cropper/2.2.4/cropper.min.js',
         '//cdnjs.cloudflare.com/ajax/libs/nanobar/0.2.1/nanobar.js',
-        'html2canvas.min.js',
-        'html2canvas.svg.min.js',
         'custom-st-trevor-part.js',
         'convert.js'
     ];
@@ -27,18 +25,15 @@ class CustomSirTrevorAsset extends AssetBundle
         'yii\imperavi\ImperaviRedactorAsset',
         'madand\underscore\UnderscoreAsset'
     ];
-
     
     public static function register($view){
         $providers=\Yii::$app->{KontTrevor::$componentName}->providers;
-        $view->registerJS('SirTrevorProviders='.json_encode($providers).'
-_.each(SirTrevorProviders, function(e) {
-    var extended = $.extend(e, SirTrevorCustomBlockAttributes);
-    //console.log(extended);
-    SirTrevor.Blocks[e.type] = SirTrevor.Block.extend(extended);
-});'
-
-,\yii\web\View::POS_END);
+        $view->registerJS('SirTrevorProviders='.json_encode($providers).';
+            _.each(SirTrevorProviders, function(e) {
+                var extended = $.extend(e, SirTrevorCustomBlockAttributes);
+                //console.log(extended);
+                SirTrevor.Blocks[e.type] = SirTrevor.Block.extend(extended);
+            });',\yii\web\View::POS_END);
         parent::register($view);
     }
 }

@@ -129,7 +129,7 @@ You can select upload image, crop it and replace by front end.
 ######data-max-width="1076" 
   Before uploading reduces if the witdh of image is higher than that width in pixel units. Global setting is 1200px
   
-Images are can be comined with other editable-subblock data for alt and title attributes for SEO purposes.
+Images can be combined with other editable-subblock data for alt and title attributes for SEO purposes.
 
 The Current Situation?
 -----
