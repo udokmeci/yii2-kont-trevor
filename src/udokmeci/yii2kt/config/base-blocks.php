@@ -11,7 +11,7 @@ return [
         'template' => <<<MST
 <div class="row">
 <div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{h2_1}}</h2>
+<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</div>
 </div>
 </div>
@@ -31,7 +31,7 @@ MST
         'template'=><<<MST
 <div class="row">
 <div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{h2_1}}</h2>
+<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
 </div>
 <div class="col-md-6">
 <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1}}" title="{{h2_1}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
@@ -56,7 +56,7 @@ MST
         'template'=><<<MST
 <div class="row">
 <div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{h2_1}}</h2>
+<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
 </div>
 <div class="col-md-12">
 <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1}}" title="{{h2_1}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="1076" data-key="img_1"/>
@@ -82,7 +82,7 @@ MST
         'template'=><<<MST
 <div class="row">
 <div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{h2_1}}</h2>
+<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
 </div>
 <div class="col-md-6">
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
@@ -106,11 +106,11 @@ MST
         'template'=><<<MST
 <div class="row">
 <div class="col-md-6">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{h3_1}}</h3>
+<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
 </div>
 <div class="col-md-6">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{h3_2}}</h3>
+<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
 </div>
 </div>
@@ -131,15 +131,15 @@ MST
         'template'=><<<MST
 <div class="row">
 <div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{h3_1}}</h3>
+<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
 </div>
 <div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{h3_2}}</h3>
+<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
 </div>
 <div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_3" >{{h3_3}}</h3>
+<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_3" >{{{h3_3}}}</h3>
 <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_3" >{{{subtext_3}}}</p>
 </div>
 </div>
