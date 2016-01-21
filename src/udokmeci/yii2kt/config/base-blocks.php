@@ -20,7 +20,7 @@ MST
     [
         'title'=>"Image On Left",
         'type'=>"Imageleft",
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Imageleft.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/550x350',
@@ -45,7 +45,7 @@ MST
     [
         'title'=>"Image On Top",
         'type'=>"Imagetop",
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Imagetop.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/1050x450',
@@ -70,7 +70,7 @@ MST
     [
         'title'=>"Image On Right",
         'type'=>"Imageright",
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Imageright.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/550x350',
@@ -96,7 +96,7 @@ MST
     [
         'title'=>'Two Columns',
         'type'=>'Twocolumns',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Twocolumns.jpeg',
         'templateObject'=>[
             'h3_1'=>'First Title Goes Here',
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
@@ -119,7 +119,7 @@ MST
     [
         'title'=>'Three Columns',
         'type'=>'Threecolumns',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Threecolumns.jpeg',
         'templateObject'=>[
             'h3_1'=>'First Title Goes Here',
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
@@ -148,7 +148,7 @@ MST
     [
         'title'=>'Text Block',
         'type'=>'Textblock',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Textblock.jpeg',
         'templateObject'=>[
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
         ],
@@ -164,7 +164,7 @@ MST
     [
         'title'=>'Horizontal Line',
         'type'=>'Hr',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Hr.jpeg',
         'template'=><<<MST
 <hr class="horizontal" />
 MST
@@ -172,7 +172,7 @@ MST
     [
         'title'=>'Lead Paragraph',
         'type'=>'Leadparagraph',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Leadparagraph.jpeg',
         'templateObject'=>[
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
         ],
@@ -183,7 +183,7 @@ MST
     [
         'title'=>'Qoute',
         'type'=>'Qoute',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Qoute.jpeg',
         'templateObject'=>[
             'title'=>'Someone famous in',
             'position'=>'Source Title',
@@ -206,7 +206,7 @@ MST
         [
         'title'=>'Qoute With Image',
         'type'=>'Qoutewithimage',
-        'image'=>'/img/sir-trevor/imageLeft.png',
+        'image'=>'Qoutewithimage.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/150x150',
