@@ -3,7 +3,7 @@ return [
     [
         'title' => "Heading and Paragraph",
         'type' => "Headex",
-        'image' => '/img/sir-trevor/headex.png',
+        'image' => 'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Headex.jpeg',
         'templateObject' => [
             'h2_1' => 'Title Goes Here',
             'subtext_1' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
@@ -20,7 +20,7 @@ MST
     [
         'title'=>"Image On Left",
         'type'=>"Imageleft",
-        'image'=>'Imageleft.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Imageleft.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/550x350',
@@ -45,7 +45,7 @@ MST
     [
         'title'=>"Image On Top",
         'type'=>"Imagetop",
-        'image'=>'Imagetop.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Imagetop.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/1050x450',
@@ -70,7 +70,7 @@ MST
     [
         'title'=>"Image On Right",
         'type'=>"Imageright",
-        'image'=>'Imageright.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Imageright.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/550x350',
@@ -96,7 +96,7 @@ MST
     [
         'title'=>'Two Columns',
         'type'=>'Twocolumns',
-        'image'=>'Twocolumns.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Twocolumns.jpeg',
         'templateObject'=>[
             'h3_1'=>'First Title Goes Here',
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
@@ -119,7 +119,7 @@ MST
     [
         'title'=>'Three Columns',
         'type'=>'Threecolumns',
-        'image'=>'Threecolumns.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Threecolumns.jpeg',
         'templateObject'=>[
             'h3_1'=>'First Title Goes Here',
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
@@ -148,7 +148,7 @@ MST
     [
         'title'=>'Text Block',
         'type'=>'Textblock',
-        'image'=>'Textblock.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Textblock.jpeg',
         'templateObject'=>[
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
         ],
@@ -164,7 +164,7 @@ MST
     [
         'title'=>'Horizontal Line',
         'type'=>'Hr',
-        'image'=>'Hr.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Hr.jpeg',
         'template'=><<<MST
 <hr class="horizontal" />
 MST
@@ -172,7 +172,7 @@ MST
     [
         'title'=>'Lead Paragraph',
         'type'=>'Leadparagraph',
-        'image'=>'Leadparagraph.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Leadparagraph.jpeg',
         'templateObject'=>[
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
         ],
@@ -183,7 +183,7 @@ MST
     [
         'title'=>'Qoute',
         'type'=>'Qoute',
-        'image'=>'Qoute.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Qoute.jpeg',
         'templateObject'=>[
             'title'=>'Someone famous in',
             'position'=>'Source Title',
@@ -206,7 +206,7 @@ MST
         [
         'title'=>'Qoute With Image',
         'type'=>'Qoutewithimage',
-        'image'=>'Qoutewithimage.jpeg',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Qoutewithimage.jpeg',
         'templateObject'=>[
             'img_1'=>[
                 'url'=>'http://placehold.it/150x150',
@@ -219,7 +219,7 @@ MST
         <blockquote>
               <div class="row">
                 <div class="col-sm-3 text-center">
-                  <img class="img-responsive img-circle center-block" src="{{img_1.url}}"  alt="{{title}}" title="{{title}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
+                  <img class="img-responsive img-circle center-block" src="{{img_1.url}}"  alt="{{title_textOnly}}" title="{{title_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
                 </div>
                 <div class="col-sm-9">
                    <div>

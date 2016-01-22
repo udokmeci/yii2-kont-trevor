@@ -1,3 +1,16 @@
+$.fn.isInline=function(){
+    return $(this).is('b, big, i, small, tt, abbr, acronym, cite, code, dfn, em, kbd, strong, samp, time, var, a, bdo, br, img, map, object, q, script, span, sub, sup, button, input, label, select, textarea'); 
+}
+$.fn.canContainBlock=function(){
+    var $this=$(this);
+    if($this.isInline)
+        return false;
+    return !$this.is('p, h1, h2, h3, h4, h5, h6'); 
+
+}
+$.fn.isBlock=function(){
+    return !$(this).isInline(); 
+}
 jQuery.fn.customSirTrevorPart = function(options) {
     var defaults = {
         imgBtnLabel: '<i class="fa fa-picture-o"></i>',
@@ -36,7 +49,6 @@ jQuery.fn.customSirTrevorPart = function(options) {
         return SirTrevor.getInstance(settings.block.instanceID)
     };
     function initBlock(item) {
-        console.log(item);
         item.addClass('cst-placeholer');
         item.notDefault = function() {
             item.removeClass('cst-placeholer');
@@ -55,13 +67,16 @@ jQuery.fn.customSirTrevorPart = function(options) {
     };
     function initSubBlock(item) {
         item.attr('contenteditable', 'true');
-        item.isBlock = function() {
-            return item.css('display')=='block';
-        };
         item.getValue = function() {
-            if(item.isBlock())
+            if(item.canContainBlock())
                 return item.html();
-            return $(item.html()).html();
+            var inner=$(item.html());
+            if(inner.isBlock())
+                return inner.html();
+            return item.html();
+        };
+        item.getTextValue = function() {
+            return item.text();
         };
         item.setValue = function(value) {
             return item.html(value).notDefault();
@@ -71,10 +86,9 @@ jQuery.fn.customSirTrevorPart = function(options) {
                 document.execCommand('selectAll', false, null);
         });
         item.changeFunction = function(e) {
-            console.log('input', e);
             item.notDefault();
-            //console.log(item.data().key,settings.block);
             settings.block.change(item.data().key, item.getValue());
+            settings.block.change(item.data().key+'_textOnly', item.getTextValue());
         };
         
         item[0].addEventListener("paste", function(e) {
@@ -96,7 +110,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
                     $item.removeAttr('style')
                         .removeClass()
                         .css(saveStyle);
-                    if (item.isBlock() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')) {
+                    if (item.canContainBlock() || !$(this).is('section,div,p,ul,ol,li,blockqoute,b,i,strong,a,hr,img,iframe')) {
                         $item.replaceWith(function() {
                             return $(this).text();
                         });
@@ -276,7 +290,11 @@ jQuery.fn.customSirTrevorPart = function(options) {
         map[$this.data().key] = initBlock($this);
     });
     this.setValue = function(key, value) {
-        map[key].setValue(value).notDefault();
+        try{
+            map[key].setValue(value).notDefault();
+        }catch(error){
+            console.log(error);
+        }
     }
     this.getValue = function(key) {
         //console.log(map[key]);
