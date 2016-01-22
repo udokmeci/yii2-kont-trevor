@@ -203,7 +203,7 @@ MST
 
 MST
     ],
-        [
+    [
         'title'=>'Qoute With Image',
         'type'=>'Qoutewithimage',
         'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Qoutewithimage.jpeg',
@@ -232,6 +232,23 @@ MST
                 </div>
               </div>
             </blockquote>
+MST
+    ],
+    [
+        'title'=>'Image with caption',
+        'type'=>'Imagewithcaption',
+        'image'=>'https://raw.githubusercontent.com/udokmeci/yii2-kont-trevor/master/src/udokmeci/yii2kt/cst-files/images/Imagewithcaption.jpeg',
+        'templateObject'=>[
+            'img_1'=>[
+                'url'=>'http://placehold.it/750x400',
+            ],
+            'caption_1'=>'A caption for the above image.',
+        ],
+        'template'=><<<MST
+<figure class="figure">
+  <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{caption_1_textOnly}}" title="{{caption_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="750" data-key="img_1"/>
+  <figcaption class="figure-caption" data-st-part="data" data-role="editable-subblock"  data-key="caption_1" >{{{caption_1}}}</figcaption>
+</figure>
 MST
     ],
 ];

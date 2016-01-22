@@ -1,5 +1,5 @@
 $.fn.isInline=function(){
-    return $(this).is('b, big, i, small, tt, abbr, acronym, cite, code, dfn, em, kbd, strong, samp, time, var, a, bdo, br, img, map, object, q, script, span, sub, sup, button, input, label, select, textarea'); 
+    return $(this).is('b, big, i, small, tt, abbr, acronym, cite, code, dfn, em, kbd, strong, samp, time, var, a, bdo, br, img, map, object, q, script, span, sub, sup, button, input, label, select, textarea, figcaption'); 
 }
 $.fn.canContainBlock=function(){
     var $this=$(this);
@@ -176,7 +176,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
                             .html('<i class="fa fa-crop"></i>')
                             .appendTo(item.options.btnGroup);
                         item.imageNoCropBtn = $('<button type="button" class="btn btn-success"/>')
-                            .html('<i class="fa fa-check"></i>')
+                            .html('<i class="fa fa-cloud-upload"></i>')
                             .appendTo(item.options.btnGroup);
                         item.imageCancelBtn = $('<button type="button" class="btn btn-danger"/>')
                             .html('<i class="fa fa-trash"></i>')
