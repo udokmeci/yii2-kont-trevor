@@ -14,7 +14,6 @@ class KontTrevor extends \yii\base\Component
     public function init()
     {
         parent::init();
-
     	$this->trigger(static::EVENT_INIT);
     }
 

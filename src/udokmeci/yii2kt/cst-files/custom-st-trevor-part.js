@@ -71,7 +71,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
             if(item.canContainBlock())
                 return item.html();
             var inner=$(item.html());
-            if(inner.isBlock())
+            if(inner.length==1 && inner.isBlock())
                 return inner.html();
             return item.html();
         };
