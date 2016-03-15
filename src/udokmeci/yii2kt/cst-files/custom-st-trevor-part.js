@@ -3,7 +3,7 @@ $.fn.isInline=function(){
 }
 $.fn.canContainBlock=function(){
     var $this=$(this);
-    if($this.isInline)
+    if($this.isInline())
         return false;
     return !$this.is('p, h1, h2, h3, h4, h5, h6'); 
 
