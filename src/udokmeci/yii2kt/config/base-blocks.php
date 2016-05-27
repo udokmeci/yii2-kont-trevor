@@ -12,7 +12,7 @@ return [
 <div class="row">
 <div class="col-md-12">
 <h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</div>
+<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
 </div>
 </div>
 MST
