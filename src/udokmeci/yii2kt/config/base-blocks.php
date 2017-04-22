@@ -10,10 +10,25 @@ return [
         ],
         'template' => <<<MST
 <div class="row">
-<div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    <div class="col-md-12">
+        <h2 class=" header1 h2" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
 </div>
+MST
+    ],
+
+    [
+        'title' => "Only Heading",
+        'type' => "OnlyHeading",
+        'templateObject' => [
+            'h2_1' => 'Title Goes Here',
+        ],
+        'template' => <<<MST
+<div class="row">
+    <div class="col-md-12">
+        <h2 class=" header1 h2" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+    </div>
 </div>
 MST
     ],
@@ -30,15 +45,17 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
-</div>
-<div class="col-md-6">
-<img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
-</div>
-<div class="col-md-6">
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
+    <div class="col-md-12">
+        <h2 class=" header1 h2" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+    </div>
+<div>
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
+    </div>
+    <div class="col-md-6">
+        <p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
 </div>
 MST
     ],
@@ -55,15 +72,18 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+    <div class="col-md-12">
+    <h2 class=" header1 h2" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
 </div>
-<div class="col-md-12">
-<img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="1076" data-key="img_1"/>
+<div class="row">
+    <div class="col-md-12">
+        <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="1076" data-key="img_1"/>
+    </div>
 </div>
-<div class="col-md-12">
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
+<div class="row">
+    <div class="col-md-12">
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
 </div>
 MST
     ],
@@ -81,15 +101,17 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-12">
-<h2 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+    <div class="col-md-12">
+        <h2 class=" header1 h2" data-st-part="data" data-role="editable-subblock" data-key="h2_1" >{{{h2_1}}}</h2>
+    </div>
 </div>
-<div class="col-md-6">
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
-<div class="col-md-6">
-<img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
-</div>
+<div class="row">
+    <div class="col-md-6">
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
+    <div class="col-md-6">
+        <img class="img-responsive center-block" src="{{img_1.url}}"  alt="{{h2_1_textOnly}}" title="{{h2_1_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
+    </div>
 </div>
 MST
     ],
@@ -105,14 +127,14 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-6">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
-<div class="col-md-6">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
-</div>
+    <div class="col-md-6">
+        <h3 class=" header1 h3" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
+    <div class="col-md-6">
+        <h3 class=" header1 h3" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
+    </div>
 </div>
 MST
     ],
@@ -130,18 +152,18 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
-<div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
-</div>
-<div class="col-md-4">
-<h3 class=" header1" data-st-part="data" data-role="editable-subblock" data-key="h3_3" >{{{h3_3}}}</h3>
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_3" >{{{subtext_3}}}</p>
-</div>
+    <div class="col-md-4">
+        <h3 class=" header1 h3" data-st-part="data" data-role="editable-subblock" data-key="h3_1" >{{{h3_1}}}</h3>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
+    <div class="col-md-4">
+        <h3 class=" header1 h3" data-st-part="data" data-role="editable-subblock" data-key="h3_2" >{{{h3_2}}}</h3>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_2" >{{{subtext_2}}}</p>
+    </div>
+    <div class="col-md-4">
+        <h3 class=" header1 h3" data-st-part="data" data-role="editable-subblock" data-key="h3_3" >{{{h3_3}}}</h3>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_3" >{{{subtext_3}}}</p>
+    </div>
 </div>
 MST
     ],
@@ -154,10 +176,9 @@ MST
         ],
         'template'=><<<MST
 <div class="row">
-<div class="col-md-12">
-<p class="" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
-</div>
-
+    <div class="col-md-12">
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+    </div>
 </div>
 MST
     ],
@@ -177,7 +198,7 @@ MST
             'subtext_1'=>'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
         ],
         'template'=><<<MST
-<p class="lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+<p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
 MST
     ],
     [
@@ -192,7 +213,7 @@ MST
         'template'=><<<MST
 <blockquote>
     <div>
-        <p class="lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+        <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
     </div>
     <footer>
         <span  data-st-part="data" data-role="editable-subblock"  data-key="title" >{{{title}}}</span>
@@ -219,11 +240,11 @@ MST
         <blockquote>
               <div class="row">
                 <div class="col-sm-3 text-center">
-                  <img class="img-responsive img-circle center-block" src="{{img_1.url}}"  alt="{{title_textOnly}}" title="{{title_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
+                  <img class=" img-responsive img-circle center-block" src="{{img_1.url}}"  alt="{{title_textOnly}}" title="{{title_textOnly}}" data-width="{{img_1.width}}" data-height='{{img_1.height}}' width="{{img_1.width}}" height='{{img_1.height}}'data-id="{{img_1.id}}" data-st-part="data" data-role="editable-image" data-max-width="550" data-key="img_1"/>
                 </div>
                 <div class="col-sm-9">
                    <div>
-                    <p class="lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
+                    <p class=" lead" data-st-part="data" data-role="editable-subblock"  data-key="subtext_1" >{{{subtext_1}}}</p>
                     </div>
                     <footer>
                     <span  data-st-part="data" data-role="editable-subblock"  data-key="title" >{{{title}}}</span>
