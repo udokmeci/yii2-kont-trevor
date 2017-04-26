@@ -131,9 +131,7 @@ jQuery.fn.customSirTrevorPart = function(options) {
         item[0].addEventListener("input", item.changeFunction, false);
 
         localName= item.context.localName;
-        secondLetter=localName.substr(1,2);
-        firstLetter=localName.substr(0,1);
-        if (!(firstLetter == 'h' && $.isNumeric(secondLetter))) {
+        if (!localName.is('h1, h2, h3, h4, h5, h6')) {
                 item.editor = new MediumEditor(item, {
                     buttons: ['bold', 'italic', 'underline', 'anchor'],
                     textOnly:true,
