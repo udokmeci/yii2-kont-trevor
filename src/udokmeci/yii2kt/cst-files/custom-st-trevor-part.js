@@ -129,10 +129,14 @@ jQuery.fn.customSirTrevorPart = function(options) {
             item.changeFunction(e);
         }, false);
         item[0].addEventListener("input", item.changeFunction, false);
-        item.editor = new MediumEditor(item, {
-            buttons: ['bold', 'italic', 'underline', 'anchor'],
-            textOnly:true,
-        });
+
+        localName= item.context.localName;
+        if (!localName.is('h1, h2, h3, h4, h5, h6')) {
+                item.editor = new MediumEditor(item, {
+                    buttons: ['bold', 'italic', 'underline', 'anchor'],
+                    textOnly:true,
+                });
+        }
         return item;
     };
     function initImageBlock(item) {
