@@ -20,7 +20,7 @@
     "require": {
         "php": ">=5.3.0",
         "yiisoft/yii2": "*",
-        "perminder-klair/yii2-sir-trevor-js": "dev-master",
+        "perminder-klair/yii2-sir-trevor-js": "0.0.5",
         "apollo/yii2-i18next" : "*",
         "bower-asset/sir-trevor-js": "*",
         "xfg/yii2-mustache.js":"*",
