@@ -26,7 +26,7 @@
         "xfg/yii2-mustache.js":"*",
         "cedx/yii2-mustache":"*",
         "madand/yii2-underscore": "*",
-        "asofter/yii2-imperavi-redactor": "*",
+        "vova07/yii2-imperavi-widget": "@stable",
         "bower-asset/font-awesome": "^4.0"
     },
     "require-dev": {
