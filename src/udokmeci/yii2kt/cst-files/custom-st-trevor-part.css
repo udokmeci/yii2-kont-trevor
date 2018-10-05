@@ -1,0 +1,29 @@
+.st-block img.cst-placeholer {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  /* msie */
+  background-color: #000;
+}
+.st-block .cst-placeholer {
+  color: #ccc;
+}
+.st-block .st-error {
+  background-color: #FFF4F4;
+}
+.st-block .cst-wrapper .cst-options {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  text-align: left;
+  z-index: 99;
+}
+.st-block .cst-wrapper .cst-options > .btn-group {
+  position: absolute;
+  width: 200px;
+  top: -30px;
+}
+.cst-wrapper:hover .cst-options {
+  display: block !important;
+}
+/*# sourceMappingURL=custom-st-trevor-part.css.map */
